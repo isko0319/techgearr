@@ -784,8 +784,8 @@ let promoCodes = {
 };
 
 // Admin credentials
-const ADMIN_USERNAME = 'ekup';
-const ADMIN_PASSWORD = 'ekup123';
+const ADMIN_USERNAME = 'lindsay';
+const ADMIN_PASSWORD = 'lindsayisko';
 
 // ==================== State Management ====================
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
