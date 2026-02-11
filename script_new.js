@@ -792,8 +792,8 @@ let promoCodes = {
 
 // ==================== Authentication ====================
 const ADMIN_CREDENTIALS = {
-    username: 'ekup',
-    password: 'ekup123'
+    username: 'lindsay',
+    password: 'lindsayisko'
 };
 
 let isAdminLoggedIn = false;
