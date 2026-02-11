@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechGear - Premium Tech Accessories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-microchip"></i>
+                <span>TechGear</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+                <li><a href="#products" class="nav-link" data-section="products">Products</a></li>
+                <li><a href="#deals" class="nav-link" data-section="deals">Deals</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="account-btn" id="accountBtn">
+                    <i class="fas fa-user"></i>
+                </button>
+                <button class="admin-btn" id="adminBtn" title="Admin Panel">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Experience the Future of Tech</h1>
+                <p class="hero-subtitle">Premium accessories for the modern tech enthusiast</p>
+                <button class="btn btn-primary" data-section="products">Shop Now</button>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <i class="fas fa-headphones"></i>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-keyboard"></i>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Products -->
+        <div class="featured-section">
+            <h2>Featured Products</h2>
+            <div class="products-grid" id="featuredProducts"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <div class="products-container">
+            <div class="products-header">
+                <h1>All Products</h1>
+                <div class="products-controls">
+                    <div class="filter-group">
+                        <label for="categoryFilter">Category:</label>
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="headphones">Headphones</option>
+                            <option value="keyboards">Keyboards</option>
+                            <option value="mice">Mice</option>
+                            <option value="cables">Cables</option>
+                            <option value="chargers">Chargers</option>
+                            <option value="phone-accessories">Phone Accessories</option>
+                        </select>
+                    </div>
+                    <div class="sort-group">
+                        <label for="sortFilter">Sort by:</label>
+                        <select id="sortFilter">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Top Rated</option>
+                            <option value="newest">Newest</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section id="deals" class="section">
+        <div class="deals-container">
+            <h1>Special Deals & Offers</h1>
+            <div class="deals-grid" id="dealsGrid"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about-container">
+            <div class="about-content">
+                <h1>About TechGear</h1>
+                <p>Welcome to TechGear, your ultimate destination for premium tech accessories. Since 2020, we've been committed to bringing you the latest and greatest in technology.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>Fast Shipping</h3>
+                        <p>Free shipping on orders over $50</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Secure Payment</h3>
+                        <p>100% secure transactions</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-undo"></i>
+                        <h3>Easy Returns</h3>
+                        <p>30-day money-back guarantee</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Customer support always here to help</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-container">
+            <h1>Get in Touch</h1>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-btn" id="closeCartModal">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping:</span>
+                    <span id="shipping">$0.00</span>
+                </div>
+                <div class="summary-row discount" id="discountRow" style="display: none;">
+                    <span>Discount:</span>
+                    <span id="discount">-$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-secondary" id="continueShopping">Continue Shopping</button>
+                <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content checkout-modal">
+            <div class="modal-header">
+                <h2>Checkout</h2>
+                <button class="close-btn" id="closeCheckoutModal">&times;</button>
+            </div>
+            <form id="checkoutForm">
+                <div class="form-section">
+                    <h3>Shipping Address</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Street Address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="City" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="State" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="ZIP Code" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Payment Information</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Cardholder Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Card Number" maxlength="19" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="CVV" maxlength="4" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label class="checkbox">
+                        <input type="checkbox" id="promoCode">
+                        <span>I have a promo code</span>
+                    </label>
+                    <div id="promoCodeInput" style="display: none;">
+                        <input type="text" id="promoCodeField" placeholder="Enter promo code">
+                        <button type="button" id="applyPromo" class="btn btn-secondary">Apply</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary full-width">Complete Purchase</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Account Modal -->
+    <div class="modal" id="accountModal">
+        <div class="modal-content account-modal">
+            <div class="modal-header">
+                <h2>My Account</h2>
+                <button class="close-btn" id="closeAccountModal">&times;</button>
+            </div>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="profile">Profile</button>
+                <button class="tab-btn" data-tab="orders">Orders</button>
+                <button class="tab-btn" data-tab="wishlist">Wishlist</button>
+            </div>
+            
+            <div class="tab-content" id="profile" style="display: block;">
+                <form id="profileForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" value="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" value="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone" value="">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="tab-content" id="orders">
+                <div id="ordersList"></div>
+            </div>
+
+            <div class="tab-content" id="wishlist">
+                <div id="wishlistItems" class="products-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div class="modal" id="adminLoginModal">
+        <div class="modal-content admin-login-modal">
+            <div class="modal-header">
+                <h2>Admin Login</h2>
+                <button class="close-btn" id="closeAdminLogin">&times;</button>
+            </div>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="adminUsername" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="adminPassword" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Login</button>
+            </form>
+            <p class="admin-hint">Demo: username: <strong>ekup</strong> | password: <strong>ekup123</strong></p>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Modal -->
+    <div class="modal" id="adminDashboardModal">
+        <div class="modal-content admin-dashboard-modal">
+            <div class="modal-header">
+                <h2>Admin Dashboard</h2>
+                <button class="close-btn" id="closeAdminDashboard">&times;</button>
+            </div>
+            <div class="admin-tabs">
+                <button class="admin-tab-btn active" data-admin-tab="manage-products">Manage Products</button>
+                <button class="admin-tab-btn" data-admin-tab="add-product">Add Product</button>
+                <button class="admin-tab-btn" data-admin-tab="manage-promos">Manage Promos</button>
+                <button class="admin-tab-btn" data-admin-tab="logout">Logout</button>
+            </div>
+
+            <!-- Manage Products Tab -->
+            <div class="admin-tab-content" id="manage-products" style="display: block;">
+                <div class="admin-search">
+                    <input type="text" id="adminSearch" placeholder="Search products...">
+                </div>
+                <div class="admin-products-list" id="adminProductsList"></div>
+            </div>
+
+            <!-- Add Product Tab -->
+            <div class="admin-tab-content" id="add-product">
+                <form id="addProductForm">
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" placeholder="Product name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select required>
+                                <option value="">Select category</option>
+                                <option value="headphones">Headphones</option>
+                                <option value="keyboards">Keyboards</option>
+                                <option value="mice">Mice</option>
+                                <option value="cables">Cables</option>
+                                <option value="chargers">Chargers</option>
+                                <option value="phone-accessories">Phone Accessories</option>
+                                <option value="monitors">Monitors</option>
+                                <option value="webcams">Webcams</option>
+                                <option value="microphones">Microphones</option>
+                                <option value="storage">Storage</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input type="number" placeholder="Price" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Original Price</label>
+                            <input type="number" placeholder="Original price" step="0.01" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea placeholder="Product description" rows="4" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Icon/Emoji</label>
+                            <input type="text" placeholder="e.g., 🎧" maxlength="2" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Rating (0-5)</label>
+                            <input type="number" placeholder="Rating" min="0" max="5" step="0.1" value="4.5" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                </form>
+            </div>
+
+            <!-- Manage Promos Tab -->
+            <div class="admin-tab-content" id="manage-promos">
+                <div class="promo-form">
+                    <h3>Add Promo Code</h3>
+                    <form id="addPromoForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Promo Code</label>
+                                <input type="text" id="promoCodeName" placeholder="e.g., SAVE20" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Discount (%)</label>
+                                <input type="number" id="promoDiscount" placeholder="e.g., 20" min="0" max="100" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" id="promoDescription" placeholder="e.g., 20% off all items" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Promo</button>
+                    </form>
+                </div>
+                <div class="promos-list" id="promosList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add to Cart Modal with Options -->
+    <div class="modal" id="addToCartModal">
+        <div class="modal-content add-to-cart-modal">
+            <div class="modal-header">
+                <h2>View Product</h2>
+                <button class="close-btn" id="closeAddToCartModal">&times;</button>
+            </div>
+            <div class="product-details-container">
+                <div class="product-gallery">
+                    <div class="gallery-main">
+                        <img id="galleryMainImage" src="" alt="Product" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="gallery-thumbs" id="galleryThumbs"></div>
+                </div>
+                <div class="product-details-info">
+                    <h2 id="detailProductName"></h2>
+                    <div id="detailProductRating"></div>
+                    <div class="detail-price">
+                        <span id="detailCurrentPrice" class="current-price"></span>
+                        <span id="detailOriginalPrice" class="original-price"></span>
+                        <span id="detailDiscount" class="discount-percent"></span>
+                    </div>
+                    <p id="detailDescription" class="product-description"></p>
+                    
+                    <div class="quantity-selector">
+                        <label>Quantity:</label>
+                        <div class="quantity-control">
+                            <button id="qtyMinus" class="qty-btn" type="button">−</button>
+                            <input id="detailQuantity" type="number" value="1" min="1" max="99">
+                            <button id="qtyPlus" class="qty-btn" type="button">+</button>
+                        </div>
+                    </div>
+
+                    <div class="product-options-actions">
+                        <button class="btn btn-secondary" id="addToCartBtn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="btn btn-primary" id="checkoutNowBtn">
+                            <i class="fas fa-credit-card"></i> Proceed to Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Image Gallery Modal -->
+    <div class="modal" id="imageGalleryModal">
+        <div class="modal-content gallery-modal">
+            <button class="close-btn" id="closeGalleryModal">&times;</button>
+            <div class="gallery-container">
+                <img id="gallerySingleImage" src="" alt="Product">
+                <button class="gallery-nav-btn prev" id="galleryPrev">❮</button>
+                <button class="gallery-nav-btn next" id="galleryNext">❯</button>
+                <div class="gallery-counter" id="galleryCounter"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
